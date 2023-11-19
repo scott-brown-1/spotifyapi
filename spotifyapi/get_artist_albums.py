@@ -1,3 +1,6 @@
+import os
+print(os.getcwd())
+
 from query_spotify_api import query_spotify
 from api_constants import ARTISTS_ENDPOINT
 
