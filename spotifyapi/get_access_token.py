@@ -52,14 +52,14 @@ def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
 def get_access_token(client_id, client_secret, timeout=60, retries=3):
     token_file_path = f'{DATA_DIR}/access_token.json'
 
-    def get_write_token():
+    def get_write_token(path):
         response = get_new_access_token(
                 client_id = client_id, 
                 client_secret = client_secret,
                 timeout = timeout,
                 retries = retries)
 
-        with open(token_file_path, 'w') as token_file:
+        with open(path, 'w') as token_file:
                 json.dump(response, token_file)
 
         return response['access_token']
@@ -67,7 +67,7 @@ def get_access_token(client_id, client_secret, timeout=60, retries=3):
     ## Check if token file exists
     if not os.path.exists(token_file_path):
         print(f'{token_file_path} not found. Creating file and getting new token...')
-        return get_write_token()
+        return get_write_token(token_file_path)
     else:
         try:
             with open(token_file_path, 'r') as token_file:
@@ -77,7 +77,7 @@ def get_access_token(client_id, client_secret, timeout=60, retries=3):
             if data['expire_date'] < datetime.datetime.now().timestamp() + 120:
                 ## Get new token and write to file
                 print('Token expired. Getting new token...')
-                return get_write_token()
+                return get_write_token(token_file_path)
             else:
                 ## Otherwise, get existing token
                 print('Using existing token...')
