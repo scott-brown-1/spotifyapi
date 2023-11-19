@@ -4,7 +4,7 @@ import os
 
 import requests
 
-from api_constants import DATA_DIR
+from spotifyapi.api_constants import DATA_DIR
         
 def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
     ## Define API endpoint and data

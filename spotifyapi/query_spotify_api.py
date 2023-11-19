@@ -1,5 +1,5 @@
 import requests
-from api_constants import ARTISTS_ENDPOINT, AUDIO_FEATURES_ENDPOINT
+from spotifyapi.api_constants import ARTISTS_ENDPOINT, AUDIO_FEATURES_ENDPOINT
 
 ## Base API querying function for others to build on
 def query_spotify(endpoint, access_token, timeout=60, retries=3):

@@ -1,5 +1,5 @@
-from query_spotify_api import query_spotify
-from api_constants import ARTISTS_ENDPOINT
+from spotifyapi.query_spotify_api import query_spotify
+from spotifyapi.api_constants import ARTISTS_ENDPOINT
 
 def get_artists(artist_ids, access_token):
     ## Define artist data endpoint

@@ -1,5 +1,5 @@
-from query_spotify_api import query_spotify
-from api_constants import ARTISTS_ENDPOINT
+from spotifyapi.query_spotify_api import query_spotify
+from spotifyapi.api_constants import AUDIO_FEATURES_ENDPOINT
 
 def get_tracks_audio_features(track_ids, access_token):
     ## Define audio feature endpoint

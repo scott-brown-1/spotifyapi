@@ -1,8 +1,5 @@
-import os
-print(os.getcwd())
-
-from query_spotify_api import query_spotify
-from api_constants import ARTISTS_ENDPOINT
+from spotifyapi.query_spotify_api import query_spotify
+from spotifyapi.api_constants import ARTISTS_ENDPOINT
 
 def get_artist_albums(artist_id, access_token, limit=10):
     ## Define artist data endpoint
