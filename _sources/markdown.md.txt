@@ -1,5 +1,3 @@
-# spotifyapi markdown
+# Description
 
-* ul item 1
-* ul item 2
-* ul item 3
+`spotifyapi` is a package to streamline the process of querying and cleaning data from the Spotify Web API.
