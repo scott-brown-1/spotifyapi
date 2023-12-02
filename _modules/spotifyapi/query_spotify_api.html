@@ -78,7 +78,27 @@
 <span class="c1">## Base API querying function for others to build on</span>
 <div class="viewcode-block" id="query_spotify">
 <a class="viewcode-back" href="../../spotifyapi.html#spotifyapi.query_spotify_api.query_spotify">[docs]</a>
-<span class="k">def</span> <span class="nf">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">access_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span> <span class="nb">float</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Query the Spotify API at the specified endpoint.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        endpoint (str): The API endpoint to query.</span>
+<span class="sd">        access_token (str): Spotify access token for authentication.</span>
+<span class="sd">        timeout (int, optional): Maximum time (in seconds) to wait for the request to complete. Defaults to 60.</span>
+<span class="sd">        retries (int, optional): Number of retry attempts in case of failure. Defaults to 3.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict or None: The JSON response from the Spotify API if the request is successful, </span>
+<span class="sd">                     otherwise returns None.</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; endpoint = &#39;https://api.spotify.com/v1/tracks/3Hvu1pq89dGspIjqBBMIsU&#39;</span>
+<span class="sd">        &gt;&gt;&gt; access_token = &#39;your_spotify_access_token&#39;</span>
+<span class="sd">        &gt;&gt;&gt; track_info = query_spotify(endpoint, access_token)</span>
+<span class="sd">    &quot;&quot;&quot;</span>    
+    
     <span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;Authorization&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s1">&#39;Bearer </span><span class="si">{</span><span class="n">access_token</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="p">}</span>

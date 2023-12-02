@@ -77,7 +77,30 @@
 
 <div class="viewcode-block" id="get_artist_albums">
 <a class="viewcode-back" href="../../spotifyapi.html#spotifyapi.get_artist_albums.get_artist_albums">[docs]</a>
-<span class="k">def</span> <span class="nf">get_artist_albums</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_artist_albums</span><span class="p">(</span><span class="n">artist_id</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">access_token</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Retrieve a list of an artist&#39;s albums and the albums&#39; data for a given artist ID.</span>
+
+<span class="sd">    Given an artist ID and an access token, this function will query the Spotify API for a list of the artist&#39;s albums </span>
+<span class="sd">    and the albums&#39; data. If the request is successful, it will return the response data. If the request fails, it will</span>
+<span class="sd">    print an error and return None. If the request is successful, but the status code is not 200, it will print an error and return None.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        artist_id: A Spotify artist ID.</span>
+<span class="sd">        access_token: A valid access token from the Spotify API.</span>
+<span class="sd">        limit: The maximum number of albums to return.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A list of album data from the Spotify API.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TimeoutError: If the request times out.</span>
+<span class="sd">        RequestException: If the request fails (the status code is not 200).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; artist_id = &#39;4PTG3Z6ehGkBFwjybzWkR8&#39;</span>
+<span class="sd">        &gt;&gt;&gt; access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)</span>
+<span class="sd">        &gt;&gt;&gt; album_data = get_artist_albums(artist_id, access_token, limit=10)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1">## Define artist data endpoint</span>
     <span class="n">endpoint</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ARTISTS_ENDPOINT</span><span class="si">}{</span><span class="n">artist_id</span><span class="si">}</span><span class="s1">/albums?limit=</span><span class="si">{</span><span class="n">limit</span><span class="si">}</span><span class="s1">&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Getting album data...&#39;</span><span class="p">)</span>

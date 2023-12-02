@@ -74,10 +74,28 @@
   <h1>Source code for spotifyapi.get_artists</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">spotifyapi.query_spotify_api</span> <span class="kn">import</span> <span class="n">query_spotify</span>
 <span class="kn">from</span> <span class="nn">spotifyapi.api_constants</span> <span class="kn">import</span> <span class="n">ARTISTS_ENDPOINT</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
 
 <div class="viewcode-block" id="get_artists">
 <a class="viewcode-back" href="../../spotifyapi.html#spotifyapi.get_artists.get_artists">[docs]</a>
-<span class="k">def</span> <span class="nf">get_artists</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_artists</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">access_token</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieve artist data for one or multiple artists from the Spotify API.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        artist_ids (str or list): A single artist ID as a string or a list of artist IDs.</span>
+<span class="sd">        access_token (str): Spotify access token for authentication.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        dict: Artist data for the specified artist(s).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; artist_ids = &#39;0TnOYISbd1XYRBk9myaseg&#39;</span>
+<span class="sd">        &gt;&gt;&gt; access_token = &#39;your_spotify_access_token&#39;</span>
+<span class="sd">        &gt;&gt;&gt; artist_info = get_artists(artist_ids, access_token)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1">## Define artist data endpoint</span>
     <span class="c1"># Changes if querying one or multiple artists </span>
     <span class="n">endpoint</span> <span class="o">=</span> <span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ARTISTS_ENDPOINT</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">artist_ids</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> 

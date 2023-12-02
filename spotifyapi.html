@@ -20,7 +20,8 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="spotifyapi" href="modules.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,9 +44,42 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">spotifyapi markdown</a></li>
-<li class="toctree-l1"><a class="reference internal" href="modules.html">spotifyapi</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">spotifyapi</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">spotifyapi package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.api_constants">spotifyapi.api_constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_access_token">spotifyapi.get_access_token module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_access_token"><code class="docutils literal notranslate"><span class="pre">get_access_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_new_access_token"><code class="docutils literal notranslate"><span class="pre">get_new_access_token()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artist_albums">spotifyapi.get_artist_albums module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artist_albums.get_artist_albums"><code class="docutils literal notranslate"><span class="pre">get_artist_albums()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artist_top_tracks">spotifyapi.get_artist_top_tracks module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artist_top_tracks.get_artist_top_tracks"><code class="docutils literal notranslate"><span class="pre">get_artist_top_tracks()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artists">spotifyapi.get_artists module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artists.get_artists"><code class="docutils literal notranslate"><span class="pre">get_artists()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_tracks_audio_features">spotifyapi.get_tracks_audio_features module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_tracks_audio_features.get_tracks_audio_features"><code class="docutils literal notranslate"><span class="pre">get_tracks_audio_features()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.query_spotify_api">spotifyapi.query_spotify_api module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.query_spotify_api.query_spotify"><code class="docutils literal notranslate"><span class="pre">query_spotify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -62,6 +96,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">spotifyapi</a></li>
       <li class="breadcrumb-item active">spotifyapi package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/spotifyapi.rst.txt" rel="nofollow"> View page source</a>
@@ -119,15 +154,71 @@ get a new token and write it to a new token file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_access_token.get_new_access_token">
 <span class="sig-prename descclassname"><span class="pre">spotifyapi.get_access_token.</span></span><span class="sig-name descname"><span class="pre">get_new_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_access_token.html#get_new_access_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_access_token.get_new_access_token" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Utily function called by get_access_token() to get a new access token without checking for an existing token file.</p>
+<p>This is a utility function. Users should instead use get_access_token(). Provided a client ID and client secret, this function will query the Spotify API for a new access token. If the request
+is successful, it will calculate the expire time and return the response data. If the request fails, it will print an
+error and return None. If the request times out, it will retry the request up to the number of retries specified. If
+the request is successful, but the status code is not 200, it will print an error and return None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> – A user’s Spotify client ID (from the Spotify Developer Dashboard).</p></li>
+<li><p><strong>client_secret</strong> – A user’s Spotify client secret (from the Spotify Developer Dashboard).</p></li>
+<li><p><strong>timeout</strong> – The number of seconds to wait for the server to send data before giving up and retrying.</p></li>
+<li><p><strong>retries</strong> – The maximum number of retries to attempt if the request fails before throwing an exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid access token from the Spotify API as a string.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TimeoutError</strong> – If the request times out.</p></li>
+<li><p><strong>RequestException</strong> – If the request fails (the status code is not 200).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_new_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi.get_artist_albums">
 <span id="spotifyapi-get-artist-albums-module"></span><h2>spotifyapi.get_artist_albums module<a class="headerlink" href="#module-spotifyapi.get_artist_albums" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_artist_albums.get_artist_albums">
-<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_artist_albums.</span></span><span class="sig-name descname"><span class="pre">get_artist_albums</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artist_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_artist_albums.html#get_artist_albums"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_artist_albums.get_artist_albums" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_artist_albums.</span></span><span class="sig-name descname"><span class="pre">get_artist_albums</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artist_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_artist_albums.html#get_artist_albums"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_artist_albums.get_artist_albums" title="Link to this definition"></a></dt>
+<dd><p>Retrieve a list of an artist’s albums and the albums’ data for a given artist ID.</p>
+<p>Given an artist ID and an access token, this function will query the Spotify API for a list of the artist’s albums
+and the albums’ data. If the request is successful, it will return the response data. If the request fails, it will
+print an error and return None. If the request is successful, but the status code is not 200, it will print an error and return None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>artist_id</strong> – A Spotify artist ID.</p></li>
+<li><p><strong>access_token</strong> – A valid access token from the Spotify API.</p></li>
+<li><p><strong>limit</strong> – The maximum number of albums to return.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of album data from the Spotify API.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TimeoutError</strong> – If the request times out.</p></li>
+<li><p><strong>RequestException</strong> – If the request fails (the status code is not 200).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_id</span> <span class="o">=</span> <span class="s1">&#39;4PTG3Z6ehGkBFwjybzWkR8&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">album_data</span> <span class="o">=</span> <span class="n">get_artist_albums</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi.get_artist_top_tracks">
@@ -135,31 +226,128 @@ get a new token and write it to a new token file.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_artist_top_tracks.get_artist_top_tracks">
 <span class="sig-prename descclassname"><span class="pre">spotifyapi.get_artist_top_tracks.</span></span><span class="sig-name descname"><span class="pre">get_artist_top_tracks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artist_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">market</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'US'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_artist_top_tracks.html#get_artist_top_tracks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_artist_top_tracks.get_artist_top_tracks" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Retrieve top tracks for an artist from the Spotify API.</p>
+<p>Tiven an artist ID, this function will query the Spotify API for the artist’s top tracks.
+If the request is successful, it will return the list of top tracks. If the request times out,
+it will print an error and return None. If the request fails, it will print an error and return None.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>artist_id</strong> – A Spotify artist ID.</p></li>
+<li><p><strong>access_token</strong> – A valid access token from the Spotify API.</p></li>
+<li><p><strong>market</strong> – An ISO 3166-1 alpha-2 country code for which the top tracks are determined.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A list of top tracks for the specified artist.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TimeoutError</strong> – If the request times out.</p></li>
+<li><p><strong>RequestException</strong> – If the request fails (the status code is not 200).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_id</span> <span class="o">=</span> <span class="s1">&#39;4PTG3Z6ehGkBFwjybzWkR8&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">top_tracks</span> <span class="o">=</span> <span class="n">get_artist_top_tracks</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s1">&#39;US)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi.get_artists">
 <span id="spotifyapi-get-artists-module"></span><h2>spotifyapi.get_artists module<a class="headerlink" href="#module-spotifyapi.get_artists" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_artists.get_artists">
-<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_artists.</span></span><span class="sig-name descname"><span class="pre">get_artists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artist_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_artists.html#get_artists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_artists.get_artists" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_artists.</span></span><span class="sig-name descname"><span class="pre">get_artists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artist_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_artists.html#get_artists"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_artists.get_artists" title="Link to this definition"></a></dt>
+<dd><p>Retrieve artist data for one or multiple artists from the Spotify API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>artist_ids</strong> (<em>str</em><em> or </em><em>list</em>) – A single artist ID as a string or a list of artist IDs.</p></li>
+<li><p><strong>access_token</strong> (<em>str</em>) – Spotify access token for authentication.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Artist data for the specified artist(s).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_ids</span> <span class="o">=</span> <span class="s1">&#39;0TnOYISbd1XYRBk9myaseg&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">artist_info</span> <span class="o">=</span> <span class="n">get_artists</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi.get_tracks_audio_features">
 <span id="spotifyapi-get-tracks-audio-features-module"></span><h2>spotifyapi.get_tracks_audio_features module<a class="headerlink" href="#module-spotifyapi.get_tracks_audio_features" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_tracks_audio_features.get_tracks_audio_features">
-<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_tracks_audio_features.</span></span><span class="sig-name descname"><span class="pre">get_tracks_audio_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_ids</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_tracks_audio_features.html#get_tracks_audio_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_tracks_audio_features.get_tracks_audio_features" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_tracks_audio_features.</span></span><span class="sig-name descname"><span class="pre">get_tracks_audio_features</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_ids</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_tracks_audio_features.html#get_tracks_audio_features"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_tracks_audio_features.get_tracks_audio_features" title="Link to this definition"></a></dt>
+<dd><p>Retrieve audio features for one or multiple tracks from the Spotify API.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>track_ids</strong> (<em>str</em><em> or </em><em>list</em>) – A single track ID as a string or a list of track IDs.</p></li>
+<li><p><strong>access_token</strong> (<em>str</em>) – Spotify access token for authentication.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Audio features data for the specified track(s).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">track_ids</span> <span class="o">=</span> <span class="s1">&#39;4cOdK2wGLETKBW3PvgPWqT&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audio_features</span> <span class="o">=</span> <span class="n">get_tracks_audio_features</span><span class="p">(</span><span class="n">track_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi.query_spotify_api">
 <span id="spotifyapi-query-spotify-api-module"></span><h2>spotifyapi.query_spotify_api module<a class="headerlink" href="#module-spotifyapi.query_spotify_api" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.query_spotify_api.query_spotify">
-<span class="sig-prename descclassname"><span class="pre">spotifyapi.query_spotify_api.</span></span><span class="sig-name descname"><span class="pre">query_spotify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/query_spotify_api.html#query_spotify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.query_spotify_api.query_spotify" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.query_spotify_api.</span></span><span class="sig-name descname"><span class="pre">query_spotify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">endpoint</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">access_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/query_spotify_api.html#query_spotify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.query_spotify_api.query_spotify" title="Link to this definition"></a></dt>
+<dd><p>Query the Spotify API at the specified endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>endpoint</strong> (<em>str</em>) – The API endpoint to query.</p></li>
+<li><p><strong>access_token</strong> (<em>str</em>) – Spotify access token for authentication.</p></li>
+<li><p><strong>timeout</strong> (<em>int</em><em>, </em><em>optional</em>) – Maximum time (in seconds) to wait for the request to complete. Defaults to 60.</p></li>
+<li><p><strong>retries</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of retry attempts in case of failure. Defaults to 3.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><dl class="simple">
+<dt>The JSON response from the Spotify API if the request is successful,</dt><dd><p>otherwise returns None.</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict or None</p>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.spotify.com/v1/tracks/3Hvu1pq89dGspIjqBBMIsU&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">track_info</span> <span class="o">=</span> <span class="n">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </section>
 <section id="module-spotifyapi">
@@ -170,7 +358,9 @@ get a new token and write it to a new token file.</p>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="spotifyapi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

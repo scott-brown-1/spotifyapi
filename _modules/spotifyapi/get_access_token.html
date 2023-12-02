@@ -83,6 +83,30 @@
 <div class="viewcode-block" id="get_new_access_token">
 <a class="viewcode-back" href="../../spotifyapi.html#spotifyapi.get_access_token.get_new_access_token">[docs]</a>
 <span class="k">def</span> <span class="nf">get_new_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Utily function called by get_access_token() to get a new access token without checking for an existing token file.</span>
+
+<span class="sd">    This is a utility function. Users should instead use get_access_token(). Provided a client ID and client secret, this function will query the Spotify API for a new access token. If the request</span>
+<span class="sd">    is successful, it will calculate the expire time and return the response data. If the request fails, it will print an</span>
+<span class="sd">    error and return None. If the request times out, it will retry the request up to the number of retries specified. If</span>
+<span class="sd">    the request is successful, but the status code is not 200, it will print an error and return None.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client_id: A user&#39;s Spotify client ID (from the Spotify Developer Dashboard).</span>
+<span class="sd">        client_secret: A user&#39;s Spotify client secret (from the Spotify Developer Dashboard).</span>
+<span class="sd">        timeout: The number of seconds to wait for the server to send data before giving up and retrying.</span>
+<span class="sd">        retries: The maximum number of retries to attempt if the request fails before throwing an exception.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A valid access token from the Spotify API as a string.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TimeoutError: If the request times out.</span>
+<span class="sd">        RequestException: If the request fails (the status code is not 200).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; access_token = get_new_access_token(client_id, client_secret, timeout=60, retries=3)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="c1">## Define API endpoint and data</span>
     <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://accounts.spotify.com/api/token&quot;</span>
 
