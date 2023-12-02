@@ -2,7 +2,7 @@ from spotifyapi.query_spotify_api import query_spotify
 from spotifyapi.api_constants import AUDIO_FEATURES_ENDPOINT
 from typing import Union
 
-def get_tracks_audio_features(track_ids: Union[str, list[str]], access_token: str):
+def get_tracks_audio_features(track_ids: Union[str, list[str]], access_token: str) -> list:
 
     """
     Retrieve audio features for one or multiple tracks from the Spotify API.

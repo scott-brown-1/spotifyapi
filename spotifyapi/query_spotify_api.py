@@ -2,7 +2,7 @@ import requests
 from spotifyapi.api_constants import ARTISTS_ENDPOINT, AUDIO_FEATURES_ENDPOINT
 
 ## Base API querying function for others to build on
-def query_spotify(endpoint: str, access_token: str, timeout: float=60, retries: int=3):
+def query_spotify(endpoint: str, access_token: str, timeout: float=60, retries: int=3) -> dict or None:
     
     """
     Query the Spotify API at the specified endpoint.

@@ -6,7 +6,7 @@ import requests
 
 from spotifyapi.api_constants import DATA_DIR
         
-def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
+def get_new_access_token(client_id, client_secret, timeout=60, retries=3) -> str:
     """Utily function called by get_access_token() to get a new access token without checking for an existing token file.
 
     This is a utility function. Users should instead use get_access_token(). Provided a client ID and client secret, this function will query the Spotify API for a new access token. If the request
@@ -73,7 +73,7 @@ def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
     print('Failed to get access token.')
     return None
 
-def get_access_token(client_id: str, client_secret: str, timeout:float=60, retries:int=3):
+def get_access_token(client_id: str, client_secret: str, timeout:float=60, retries:int=3) -> str:
     """Gets a valid access token from the Spotify API.
 
     Provided a client ID and client secret, this function will get a valid access

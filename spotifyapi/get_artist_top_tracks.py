@@ -1,7 +1,7 @@
 from spotifyapi.query_spotify_api import query_spotify
 from spotifyapi.api_constants import ARTISTS_ENDPOINT
 
-def get_artist_top_tracks(artist_id, access_token, market='US'):
+def get_artist_top_tracks(artist_id:str, access_token:str, market='US') -> list or None:
     """Retrieve top tracks for an artist from the Spotify API.
 
     Tiven an artist ID, this function will query the Spotify API for the artist's top tracks. 

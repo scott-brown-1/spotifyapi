@@ -1,7 +1,7 @@
 from spotifyapi.query_spotify_api import query_spotify
 from spotifyapi.api_constants import ARTISTS_ENDPOINT
 
-def get_artist_albums(artist_id:str, access_token:str, limit:int=10):
+def get_artist_albums(artist_id:str, access_token:str, limit:int=10) -> list or None:
     """Retrieve a list of an artist's albums and the albums' data for a given artist ID.
 
     Given an artist ID and an access token, this function will query the Spotify API for a list of the artist's albums 
