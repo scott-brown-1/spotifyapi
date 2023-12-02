@@ -7,6 +7,30 @@ import requests
 from spotifyapi.api_constants import DATA_DIR
         
 def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
+    """Utily function called by get_access_token() to get a new access token without checking for an existing token file.
+
+    This is a utility function. Users should instead use get_access_token(). Provided a client ID and client secret, this function will query the Spotify API for a new access token. If the request
+    is successful, it will calculate the expire time and return the response data. If the request fails, it will print an
+    error and return None. If the request times out, it will retry the request up to the number of retries specified. If
+    the request is successful, but the status code is not 200, it will print an error and return None.
+
+    Args:
+        client_id: A user's Spotify client ID (from the Spotify Developer Dashboard).
+        client_secret: A user's Spotify client secret (from the Spotify Developer Dashboard).
+        timeout: The number of seconds to wait for the server to send data before giving up and retrying.
+        retries: The maximum number of retries to attempt if the request fails before throwing an exception.
+
+    Returns:
+        A valid access token from the Spotify API as a string.
+
+    Raises:
+        TimeoutError: If the request times out.
+        RequestException: If the request fails (the status code is not 200).
+
+    Example:
+        >>> access_token = get_new_access_token(client_id, client_secret, timeout=60, retries=3)
+    """
+
     ## Define API endpoint and data
     url = "https://accounts.spotify.com/api/token"
 
@@ -48,8 +72,33 @@ def get_new_access_token(client_id, client_secret, timeout=60, retries=3):
         
     print('Failed to get access token.')
     return None
-    
-def get_access_token(client_id, client_secret, timeout=60, retries=3):
+
+def get_access_token(client_id: str, client_secret: str, timeout:float=60, retries:int=3):
+    """Gets a valid access token from the Spotify API.
+
+    Provided a client ID and client secret, this function will get a valid access
+    token from the Spotify API. If a token file exists, it will check if the
+    token is expired. If the token is expired, it will get a new token and
+    overwrite the existing token file.  If the token file does not exist, it will
+    get a new token and write it to a new token file.
+
+    Args:
+        client_id: A user's Spotify client ID (from the Spotify Developer Dashboard).
+        client_secret: A user's Spotify client secret (from the Spotify Developer Dashboard).
+        timeout: The number of seconds to wait for the server to send data before giving up and retrying.
+        retries: The maximum number of retries to attempt if the request fails before throwing an exception.
+
+    Returns:
+        A valid access token from the Spotify API as a string.
+
+    Raises:
+        TimeoutError: If the request times out.
+        RequestException: If the request fails (the status code is not 200).
+
+    Example:
+        >>> access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)
+    """
+
     token_file_path = f'{DATA_DIR}/access_token.json'
 
     def get_write_token(path):

@@ -1,7 +1,8 @@
 from spotifyapi.query_spotify_api import query_spotify
 from spotifyapi.api_constants import ARTISTS_ENDPOINT
+from typing import Union
 
-def get_artists(artist_ids: Union[str, List[str]], access_token: str):
+def get_artists(artist_ids: Union[str, list[str]], access_token: str):
 
     """
     Retrieve artist data for one or multiple artists from the Spotify API.
