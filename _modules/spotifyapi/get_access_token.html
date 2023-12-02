@@ -125,10 +125,35 @@
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Failed to get access token.&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="kc">None</span></div>
 
-    
+
 <div class="viewcode-block" id="get_access_token">
 <a class="viewcode-back" href="../../spotifyapi.html#spotifyapi.get_access_token.get_access_token">[docs]</a>
-<span class="k">def</span> <span class="nf">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">timeout</span><span class="p">:</span><span class="nb">float</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="p">:</span><span class="nb">int</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Gets a valid access token from the Spotify API.</span>
+
+<span class="sd">    Provided a client ID and client secret, this function will get a valid access</span>
+<span class="sd">    token from the Spotify API. If a token file exists, it will check if the</span>
+<span class="sd">    token is expired. If the token is expired, it will get a new token and</span>
+<span class="sd">    overwrite the existing token file.  If the token file does not exist, it will</span>
+<span class="sd">    get a new token and write it to a new token file.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        client_id: A user&#39;s Spotify client ID (from the Spotify Developer Dashboard).</span>
+<span class="sd">        client_secret: A user&#39;s Spotify client secret (from the Spotify Developer Dashboard).</span>
+<span class="sd">        timeout: The number of seconds to wait for the server to send data before giving up and retrying.</span>
+<span class="sd">        retries: The maximum number of retries to attempt if the request fails before throwing an exception.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        A valid access token from the Spotify API as a string.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        TimeoutError: If the request times out.</span>
+<span class="sd">        RequestException: If the request fails (the status code is not 200).</span>
+
+<span class="sd">    Example:</span>
+<span class="sd">        &gt;&gt;&gt; access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">token_file_path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">DATA_DIR</span><span class="si">}</span><span class="s1">/access_token.json&#39;</span>
 
     <span class="k">def</span> <span class="nf">get_write_token</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>

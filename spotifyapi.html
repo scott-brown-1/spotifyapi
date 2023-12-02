@@ -20,8 +20,7 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="spotifyapi" href="modules.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -44,42 +43,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="markdown.html">spotifyapi markdown</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">spotifyapi</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">spotifyapi package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.api_constants">spotifyapi.api_constants module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_access_token">spotifyapi.get_access_token module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_access_token"><code class="docutils literal notranslate"><span class="pre">get_access_token()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_new_access_token"><code class="docutils literal notranslate"><span class="pre">get_new_access_token()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artist_albums">spotifyapi.get_artist_albums module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artist_albums.get_artist_albums"><code class="docutils literal notranslate"><span class="pre">get_artist_albums()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artist_top_tracks">spotifyapi.get_artist_top_tracks module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artist_top_tracks.get_artist_top_tracks"><code class="docutils literal notranslate"><span class="pre">get_artist_top_tracks()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_artists">spotifyapi.get_artists module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_artists.get_artists"><code class="docutils literal notranslate"><span class="pre">get_artists()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_tracks_audio_features">spotifyapi.get_tracks_audio_features module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_tracks_audio_features.get_tracks_audio_features"><code class="docutils literal notranslate"><span class="pre">get_tracks_audio_features()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.query_spotify_api">spotifyapi.query_spotify_api module</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.query_spotify_api.query_spotify"><code class="docutils literal notranslate"><span class="pre">query_spotify()</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">spotifyapi</a></li>
 </ul>
 
         </div>
@@ -96,7 +62,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">spotifyapi</a></li>
       <li class="breadcrumb-item active">spotifyapi package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/spotifyapi.rst.txt" rel="nofollow"> View page source</a>
@@ -119,8 +84,37 @@
 <span id="spotifyapi-get-access-token-module"></span><h2>spotifyapi.get_access_token module<a class="headerlink" href="#module-spotifyapi.get_access_token" title="Link to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_access_token.get_access_token">
-<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_access_token.</span></span><span class="sig-name descname"><span class="pre">get_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_access_token.html#get_access_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_access_token.get_access_token" title="Link to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.get_access_token.</span></span><span class="sig-name descname"><span class="pre">get_access_token</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client_secret</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">60</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retries</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/get_access_token.html#get_access_token"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.get_access_token.get_access_token" title="Link to this definition"></a></dt>
+<dd><p>Gets a valid access token from the Spotify API.</p>
+<p>Provided a client ID and client secret, this function will get a valid access
+token from the Spotify API. If a token file exists, it will check if the
+token is expired. If the token is expired, it will get a new token and
+overwrite the existing token file.  If the token file does not exist, it will
+get a new token and write it to a new token file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client_id</strong> – A user’s Spotify client ID (from the Spotify Developer Dashboard).</p></li>
+<li><p><strong>client_secret</strong> – A user’s Spotify client secret (from the Spotify Developer Dashboard).</p></li>
+<li><p><strong>timeout</strong> – The number of seconds to wait for the server to send data before giving up and retrying.</p></li>
+<li><p><strong>retries</strong> – The maximum number of retries to attempt if the request fails before throwing an exception.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid access token from the Spotify API as a string.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>TimeoutError</strong> – If the request times out.</p></li>
+<li><p><strong>RequestException</strong> – If the request fails (the status code is not 200).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.get_access_token.get_new_access_token">
@@ -176,9 +170,7 @@
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="modules.html" class="btn btn-neutral float-left" title="spotifyapi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 
