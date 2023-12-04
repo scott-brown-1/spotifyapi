@@ -45,11 +45,16 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">spotifyapi markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Description</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">spotifyapi</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">spotifyapi package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.api_constants">spotifyapi.api_constants module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.api_constants">spotifyapi.api_constants module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.api_constants.DATA_DIR"><code class="docutils literal notranslate"><span class="pre">DATA_DIR</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.api_constants.ARTISTS_ENDPOINT"><code class="docutils literal notranslate"><span class="pre">ARTISTS_ENDPOINT</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.api_constants.AUDIO_FEATURES_ENDPOINT"><code class="docutils literal notranslate"><span class="pre">AUDIO_FEATURES_ENDPOINT</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.get_access_token">spotifyapi.get_access_token module</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_access_token"><code class="docutils literal notranslate"><span class="pre">get_access_token()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#spotifyapi.get_access_token.get_new_access_token"><code class="docutils literal notranslate"><span class="pre">get_new_access_token()</span></code></a></li>
@@ -114,6 +119,25 @@
 </section>
 <section id="module-spotifyapi.api_constants">
 <span id="spotifyapi-api-constants-module"></span><h2>spotifyapi.api_constants module<a class="headerlink" href="#module-spotifyapi.api_constants" title="Link to this heading"></a></h2>
+<p>Module storing constants for the Spotify API.</p>
+<dl class="py data">
+<dt class="sig sig-object py" id="spotifyapi.api_constants.DATA_DIR">
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.api_constants.</span></span><span class="sig-name descname"><span class="pre">DATA_DIR</span></span><a class="headerlink" href="#spotifyapi.api_constants.DATA_DIR" title="Link to this definition"></a></dt>
+<dd><p>Path to directory to store saved access token</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="spotifyapi.api_constants.ARTISTS_ENDPOINT">
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.api_constants.</span></span><span class="sig-name descname"><span class="pre">ARTISTS_ENDPOINT</span></span><a class="headerlink" href="#spotifyapi.api_constants.ARTISTS_ENDPOINT" title="Link to this definition"></a></dt>
+<dd><p>Get Spotify catalog information for a single artist identified by their unique Spotify ID.</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="spotifyapi.api_constants.AUDIO_FEATURES_ENDPOINT">
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.api_constants.</span></span><span class="sig-name descname"><span class="pre">AUDIO_FEATURES_ENDPOINT</span></span><a class="headerlink" href="#spotifyapi.api_constants.AUDIO_FEATURES_ENDPOINT" title="Link to this definition"></a></dt>
+<dd><p>Get audio feature information for a single track identified by its unique Spotify ID.</p>
+</dd></dl>
+
 </section>
 <section id="module-spotifyapi.get_access_token">
 <span id="spotifyapi-get-access-token-module"></span><h2>spotifyapi.get_access_token module<a class="headerlink" href="#module-spotifyapi.get_access_token" title="Link to this heading"></a></h2>
