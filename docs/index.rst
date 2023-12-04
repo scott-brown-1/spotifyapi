@@ -11,7 +11,7 @@ Welcome to spotifyapi's documentation!
    :caption: Contents:
 
    markdown
-   modules
+   get_access_token
 
 Indices and tables
 ==================
