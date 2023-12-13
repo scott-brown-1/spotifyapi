@@ -17,7 +17,7 @@ def get_artists(artist_ids: Union[str, list[str]], access_token: str) -> list or
     Example:
         >>> artist_ids = '0TnOYISbd1XYRBk9myaseg'
         >>> access_token = 'your_spotify_access_token'
-        >>> artist_info = get_artists(artist_ids, access_token)
+        >>> artist_info = spotifyapi.get_artists(artist_ids, access_token)
     """
 
     ## Define artist data endpoint

@@ -22,8 +22,8 @@ def get_artist_top_tracks(artist_id:str, access_token:str, market='US') -> list 
 
     Example:
         >>> artist_id = '4PTG3Z6ehGkBFwjybzWkR8'
-        >>> access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)
-        >>> top_tracks = get_artist_top_tracks(artist_id, access_token, market='US)
+        >>> access_token = spotifyapi.get_access_token(client_id, client_secret, timeout=60, retries=3)
+        >>> top_tracks = spotifyapi.get_artist_top_tracks(artist_id, access_token, market='US)
     """
         
     ## Define artist data endpoint

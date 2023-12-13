@@ -16,7 +16,7 @@ def join_tables(track_arg, artist_arg, audio_feature_arg, use_dfs=True):
     - DataFrame: Merged data.
 
     Example:
-    >>> result_df_objects = join_tables(track_df, artist_df, audio_feature_df, use_dfs=True)
+    >>> result_df_objects = spotifyapi.join_tables(track_df, artist_df, audio_feature_df, use_dfs=True)
     """
 
     # Load the CSV files or use the provided DataFrames

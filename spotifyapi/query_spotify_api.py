@@ -20,7 +20,7 @@ def query_spotify(endpoint: str, access_token: str, timeout: float=60, retries: 
     Example:
         >>> endpoint = 'https://api.spotify.com/v1/tracks/3Hvu1pq89dGspIjqBBMIsU'
         >>> access_token = 'your_spotify_access_token'
-        >>> track_info = query_spotify(endpoint, access_token)
+        >>> track_info = spotifyapi.query_spotify(endpoint, access_token)
     """    
     
     headers = {
