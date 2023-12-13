@@ -28,7 +28,7 @@ def get_new_access_token(client_id, client_secret, timeout=60, retries=3) -> str
         RequestException: If the request fails (the status code is not 200).
 
     Example:
-        >>> access_token = get_new_access_token(client_id, client_secret, timeout=60, retries=3)
+        >>> access_token = spotifyapi.get_new_access_token(client_id, client_secret, timeout=60, retries=3)
     """
 
     ## Define API endpoint and data
@@ -96,7 +96,7 @@ def get_access_token(client_id: str, client_secret: str, timeout:float=60, retri
         RequestException: If the request fails (the status code is not 200).
 
     Example:
-        >>> access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)
+        >>> access_token = spotifyapi.get_access_token(client_id, client_secret, timeout=60, retries=3)
     """
 
     token_file_path = f'{DATA_DIR}/access_token.json'

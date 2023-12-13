@@ -22,8 +22,8 @@ def get_artist_albums(artist_id:str, access_token:str, limit:int=10) -> list or 
 
     Example:
         >>> artist_id = '4PTG3Z6ehGkBFwjybzWkR8'
-        >>> access_token = get_access_token(client_id, client_secret, timeout=60, retries=3)
-        >>> album_data = get_artist_albums(artist_id, access_token, limit=10)
+        >>> access_token = spotifyapi.get_access_token(client_id, client_secret, timeout=60, retries=3)
+        >>> album_data = spotifyapi.get_artist_albums(artist_id, access_token, limit=10)
     """
     ## Define artist data endpoint
     endpoint = f'{ARTISTS_ENDPOINT}{artist_id}/albums?limit={limit}'

@@ -17,7 +17,7 @@ def get_tracks_audio_features(track_ids: Union[str, list[str]], access_token: st
     Example:
         >>> track_ids = '4cOdK2wGLETKBW3PvgPWqT'
         >>> access_token = 'your_spotify_access_token'
-        >>> audio_features = get_tracks_audio_features(track_ids, access_token)
+        >>> audio_features = spotifyapi.get_tracks_audio_features(track_ids, access_token)
     """
     
     # Define audio feature endpoint
