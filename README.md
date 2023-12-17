@@ -5,3 +5,7 @@ https://scott-brown-1.github.io/spotifyapi/.
 ### Install package
 
 `pip install git+https://github.com/scott-brown-1/spotifyapi`
+
+### References
+
+Spotify API: https://developer.spotify.com/documentation/web-api
