@@ -386,24 +386,42 @@ it will print an error and return None. If the request fails, it will print an e
 <span class="sig-prename descclassname"><span class="pre">spotifyapi.clean_data.</span></span><span class="sig-name descname"><span class="pre">clean_genres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prioritized_genres</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/clean_data.html#clean_genres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.clean_data.clean_genres" title="Link to this definition"></a></dt>
 <dd><p>Filter the ‘genres’ column of a DataFrame to keep only prioritized genres or genres containing the listed genres
 Order Matters, if there is Indie Rock, and the list is (‘Indie’, ‘Pop’, ‘Rock’), ‘Indie’ will be kept.</p>
-<p>Parameters:
-- df (DataFrame): Input DataFrame.
-- prioritized_genres (list): List of prioritized genres.</p>
-<p>Returns:
-- DataFrame: Filtered DataFrame with only prioritized genres.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>df</strong> (<em>DataFrame</em>) – Input DataFrame.</p></li>
+<li><p><strong>prioritized_genres</strong> (<em>list</em>) – List of prioritized genres.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Filtered DataFrame with only prioritized genres.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="spotifyapi.clean_data.join_tables">
 <span class="sig-prename descclassname"><span class="pre">spotifyapi.clean_data.</span></span><span class="sig-name descname"><span class="pre">join_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artist_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_feature_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_dfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/clean_data.html#join_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.clean_data.join_tables" title="Link to this definition"></a></dt>
 <dd><p>Join three tables based on common columns.</p>
-<p>Parameters:
-- track_arg (str or DataFrame): File path or DataFrame for the track data.
-- artist_arg (str or DataFrame): File path or DataFrame for the artist data.
-- audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.
-- use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.</p>
-<p>Returns:
-- DataFrame: Merged data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>track_arg</strong> (<em>str</em><em> or </em><em>DataFrame</em>) – File path or DataFrame for the track data.</p></li>
+<li><p><strong>artist_arg</strong> (<em>str</em><em> or </em><em>DataFrame</em>) – File path or DataFrame for the artist data.</p></li>
+<li><p><strong>audio_feature_arg</strong> (<em>str</em><em> or </em><em>DataFrame</em>) – File path or DataFrame for the audio feature data.</p></li>
+<li><p><strong>use_dfs</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Merged data.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>DataFrame</p>
+</dd>
+</dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result_df_objects</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">join_tables</span><span class="p">(</span><span class="n">track_df</span><span class="p">,</span> <span class="n">artist_df</span><span class="p">,</span> <span class="n">audio_feature_df</span><span class="p">,</span> <span class="n">use_dfs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>

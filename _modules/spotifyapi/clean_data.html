@@ -80,14 +80,14 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Join three tables based on common columns.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - track_arg (str or DataFrame): File path or DataFrame for the track data.</span>
-<span class="sd">    - artist_arg (str or DataFrame): File path or DataFrame for the artist data.</span>
-<span class="sd">    - audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.</span>
-<span class="sd">    - use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        track_arg (str or DataFrame): File path or DataFrame for the track data.</span>
+<span class="sd">        artist_arg (str or DataFrame): File path or DataFrame for the artist data.</span>
+<span class="sd">        audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.</span>
+<span class="sd">        use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">    - DataFrame: Merged data.</span>
+<span class="sd">        DataFrame: Merged data.</span>
 
 <span class="sd">    Example:</span>
 <span class="sd">        &gt;&gt;&gt; result_df_objects = spotifyapi.join_tables(track_df, artist_df, audio_feature_df, use_dfs=True)</span>
@@ -114,12 +114,12 @@
 <span class="sd">    Filter the &#39;genres&#39; column of a DataFrame to keep only prioritized genres or genres containing the listed genres</span>
 <span class="sd">    Order Matters, if there is Indie Rock, and the list is (&#39;Indie&#39;, &#39;Pop&#39;, &#39;Rock&#39;), &#39;Indie&#39; will be kept.</span>
 
-<span class="sd">    Parameters:</span>
-<span class="sd">    - df (DataFrame): Input DataFrame.</span>
-<span class="sd">    - prioritized_genres (list): List of prioritized genres.</span>
+<span class="sd">    Args:</span>
+<span class="sd">        df (DataFrame): Input DataFrame.</span>
+<span class="sd">        prioritized_genres (list): List of prioritized genres.</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">    - DataFrame: Filtered DataFrame with only prioritized genres.</span>
+<span class="sd">        DataFrame: Filtered DataFrame with only prioritized genres.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">filtered_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>  <span class="c1"># Create a copy to avoid modifying the original DataFrame</span>
     
