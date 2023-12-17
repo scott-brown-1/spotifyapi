@@ -60,6 +60,14 @@ spotifyapi.query\_spotify\_api module
    :undoc-members:
    :show-inheritance:
 
+spotifyapi.clean\_data module
+-------------------------------------
+
+.. automodule:: spotifyapi.clean_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 
