@@ -170,7 +170,7 @@ get a new token and write it to a new token file.</p>
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -203,7 +203,7 @@ the request is successful, but the status code is not 200, it will print an erro
 </dd>
 </dl>
 <p class="rubric">Example</p>
-<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_new_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_new_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -238,8 +238,8 @@ print an error and return None. If the request is successful, but the status cod
 </dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_id</span> <span class="o">=</span> <span class="s1">&#39;4PTG3Z6ehGkBFwjybzWkR8&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">album_data</span> <span class="o">=</span> <span class="n">get_artist_albums</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">album_data</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_artist_albums</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -274,8 +274,8 @@ it will print an error and return None. If the request fails, it will print an e
 </dl>
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_id</span> <span class="o">=</span> <span class="s1">&#39;4PTG3Z6ehGkBFwjybzWkR8&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">top_tracks</span> <span class="o">=</span> <span class="n">get_artist_top_tracks</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s1">&#39;US)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_access_token</span><span class="p">(</span><span class="n">client_id</span><span class="p">,</span> <span class="n">client_secret</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span> <span class="n">retries</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">top_tracks</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_artist_top_tracks</span><span class="p">(</span><span class="n">artist_id</span><span class="p">,</span> <span class="n">access_token</span><span class="p">,</span> <span class="n">market</span><span class="o">=</span><span class="s1">&#39;US)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -304,7 +304,7 @@ it will print an error and return None. If the request fails, it will print an e
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">artist_ids</span> <span class="o">=</span> <span class="s1">&#39;0TnOYISbd1XYRBk9myaseg&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">artist_info</span> <span class="o">=</span> <span class="n">get_artists</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">artist_info</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_artists</span><span class="p">(</span><span class="n">artist_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -333,7 +333,7 @@ it will print an error and return None. If the request fails, it will print an e
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">track_ids</span> <span class="o">=</span> <span class="s1">&#39;4cOdK2wGLETKBW3PvgPWqT&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">audio_features</span> <span class="o">=</span> <span class="n">get_tracks_audio_features</span><span class="p">(</span><span class="n">track_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">audio_features</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">get_tracks_audio_features</span><span class="p">(</span><span class="n">track_ids</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -368,7 +368,7 @@ it will print an error and return None. If the request fails, it will print an e
 <p class="rubric">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.spotify.com/v1/tracks/3Hvu1pq89dGspIjqBBMIsU&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">track_info</span> <span class="o">=</span> <span class="n">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">track_info</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
