@@ -80,6 +80,11 @@
 <li class="toctree-l4"><a class="reference internal" href="#spotifyapi.query_spotify_api.query_spotify"><code class="docutils literal notranslate"><span class="pre">query_spotify()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi.clean_data">spotifyapi.clean_data module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.clean_data.clean_genres"><code class="docutils literal notranslate"><span class="pre">clean_genres()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spotifyapi.clean_data.join_tables"><code class="docutils literal notranslate"><span class="pre">join_tables()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#module-spotifyapi">Module contents</a></li>
 </ul>
 </li>
@@ -369,6 +374,38 @@ it will print an error and return None. If the request fails, it will print an e
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">endpoint</span> <span class="o">=</span> <span class="s1">&#39;https://api.spotify.com/v1/tracks/3Hvu1pq89dGspIjqBBMIsU&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">access_token</span> <span class="o">=</span> <span class="s1">&#39;your_spotify_access_token&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">track_info</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">query_spotify</span><span class="p">(</span><span class="n">endpoint</span><span class="p">,</span> <span class="n">access_token</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+<section id="module-spotifyapi.clean_data">
+<span id="spotifyapi-clean-data-module"></span><h2>spotifyapi.clean_data module<a class="headerlink" href="#module-spotifyapi.clean_data" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="spotifyapi.clean_data.clean_genres">
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.clean_data.</span></span><span class="sig-name descname"><span class="pre">clean_genres</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prioritized_genres</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/clean_data.html#clean_genres"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.clean_data.clean_genres" title="Link to this definition"></a></dt>
+<dd><p>Filter the ‘genres’ column of a DataFrame to keep only prioritized genres or genres containing the listed genres
+Order Matters, if there is Indie Rock, and the list is (‘Indie’, ‘Pop’, ‘Rock’), ‘Indie’ will be kept.</p>
+<p>Parameters:
+- df (DataFrame): Input DataFrame.
+- prioritized_genres (list): List of prioritized genres.</p>
+<p>Returns:
+- DataFrame: Filtered DataFrame with only prioritized genres.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="spotifyapi.clean_data.join_tables">
+<span class="sig-prename descclassname"><span class="pre">spotifyapi.clean_data.</span></span><span class="sig-name descname"><span class="pre">join_tables</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">track_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artist_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">audio_feature_arg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_dfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/spotifyapi/clean_data.html#join_tables"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#spotifyapi.clean_data.join_tables" title="Link to this definition"></a></dt>
+<dd><p>Join three tables based on common columns.</p>
+<p>Parameters:
+- track_arg (str or DataFrame): File path or DataFrame for the track data.
+- artist_arg (str or DataFrame): File path or DataFrame for the artist data.
+- audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.
+- use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.</p>
+<p>Returns:
+- DataFrame: Merged data.</p>
+<p class="rubric">Example</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">result_df_objects</span> <span class="o">=</span> <span class="n">spotifyapi</span><span class="o">.</span><span class="n">join_tables</span><span class="p">(</span><span class="n">track_df</span><span class="p">,</span> <span class="n">artist_df</span><span class="p">,</span> <span class="n">audio_feature_df</span><span class="p">,</span> <span class="n">use_dfs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
