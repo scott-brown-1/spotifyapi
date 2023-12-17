@@ -4,14 +4,14 @@ def join_tables(track_arg, artist_arg, audio_feature_arg, use_dfs=True):
     """
     Join three tables based on common columns.
 
-    Parameters:
-    - track_arg (str or DataFrame): File path or DataFrame for the track data.
-    - artist_arg (str or DataFrame): File path or DataFrame for the artist data.
-    - audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.
-    - use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.
+    Args:
+        track_arg (str or DataFrame): File path or DataFrame for the track data.
+        artist_arg (str or DataFrame): File path or DataFrame for the artist data.
+        audio_feature_arg (str or DataFrame): File path or DataFrame for the audio feature data.
+        use_dfs (bool, optional): If True, treat the arguments as DataFrame objects. If False, treat the arguments as file paths and read them using pandas. Default is True.
 
     Returns:
-    - DataFrame: Merged data.
+        DataFrame: Merged data.
 
     Example:
         >>> result_df_objects = spotifyapi.join_tables(track_df, artist_df, audio_feature_df, use_dfs=True)
@@ -35,12 +35,12 @@ def clean_genres(df, prioritized_genres):
     Filter the 'genres' column of a DataFrame to keep only prioritized genres or genres containing the listed genres
     Order Matters, if there is Indie Rock, and the list is ('Indie', 'Pop', 'Rock'), 'Indie' will be kept.
 
-    Parameters:
-    - df (DataFrame): Input DataFrame.
-    - prioritized_genres (list): List of prioritized genres.
+    Args:
+        df (DataFrame): Input DataFrame.
+        prioritized_genres (list): List of prioritized genres.
 
     Returns:
-    - DataFrame: Filtered DataFrame with only prioritized genres.
+        DataFrame: Filtered DataFrame with only prioritized genres.
     """
     filtered_df = df.copy()  # Create a copy to avoid modifying the original DataFrame
     
